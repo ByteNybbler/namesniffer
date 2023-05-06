@@ -14,12 +14,20 @@ fn main() -> ExitCode {
         Target {
             website: "https://twitter.com/".to_owned(),
             content_denoting_availability: "This account doesn't exist".to_owned()
+        },
+        Target {
+            website: "https://deviantart.com/".to_owned(),
+            content_denoting_availability: "Page Not Found".to_owned()
+        },
+        Target {
+            website: "https://instagram.com/".to_owned(),
+            content_denoting_availability: "Sorry, this page isn't available.".to_owned()
         }
     ];
 
     for target in targets {
         if namesniffer::is_username_available(&target, &username) {
-            println!("OK: {}", target.website);
+            println!("Available: {}", target.website);
         } else {
             println!("UNAVAILABLE: {}", target.website);
         }
