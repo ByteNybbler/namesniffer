@@ -17,6 +17,7 @@ impl Target {
         content_denoting_availability: "Sorry, this page isn"
     };
 
+    // TODO: Take AJAX into consideration.
     pub fn is_username_available(&self, username: &str) -> bool {
         let response = reqwest::blocking::get(self.website.to_owned() + username).unwrap().text().unwrap();
         response.contains(&self.content_denoting_availability)
