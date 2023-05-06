@@ -17,7 +17,7 @@ fn main() -> ExitCode {
     ];
 
     for target in targets {
-        if namesniffer::is_username_available(&target, &username) {
+        if target.is_username_available(&username) {
             println!("Available: {}", target.website);
         } else {
             println!("UNAVAILABLE: {}", target.website);
